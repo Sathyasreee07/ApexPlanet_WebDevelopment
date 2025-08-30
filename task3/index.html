@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/component.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>InteractiveHub</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                <li><a href="#carousel" class="nav-link">Gallery</a></li>
+                <li><a href="#api" class="nav-link">Live Data</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Quiz & Random Jokes</h1>
+                    <p class="hero-subtitle">Responsive Design • Interactive Components • API Integration</p>
+                    <button class="btn btn-primary" onclick="scrollToSection('quiz')">
+                        Explore Features
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Quiz & Random Jokes</h3>
+                        <p>Built with vanilla HTML, CSS & JavaScript</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <h2 class="section-title">Interactive Knowledge Quiz</h2>
+                <div class="quiz-container">
+                    <div id="quiz-start" class="quiz-start">
+                        <h3>Test Your Web Development Knowledge</h3>
+                        <p>Answer 5 questions about HTML, CSS, and JavaScript</p>
+                        <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+                    </div>
+                    
+                    <div id="quiz-question" class="quiz-question hidden">
+                        <div class="question-header">
+                            <span class="question-number">Question 1 of 5</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <h3 class="question-text"></h3>
+                        <div class="options"></div>
+                        <button class="btn btn-secondary" id="next-question" onclick="nextQuestion()">Next Question</button>
+                    </div>
+                    
+                    <div id="quiz-result" class="quiz-result hidden">
+                        <div class="result-icon">🎉</div>
+                        <h3 class="result-title">Quiz Complete!</h3>
+                        <p class="result-score"></p>
+                        <p class="result-message"></p>
+                        <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Carousel Section -->
+        <section id="carousel" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Interactive Image Carousel</h2>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slides">
+                            <div class="slide active">
+                                <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern workspace">
+                                <div class="slide-content">
+                                    <h3>Modern Workspace</h3>
+                                    <p>Clean and productive environment for developers</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Creative coding">
+                                <div class="slide-content">
+                                    <h3>Creative Coding</h3>
+                                    <p>Where creativity meets technology and innovation</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Team collaboration">
+                                <div class="slide-content">
+                                    <h3>Team Collaboration</h3>
+                                    <p>Building amazing products together as a team</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mobile development">
+                                <div class="slide-content">
+                                    <h3>Mobile First</h3>
+                                    <p>Responsive design for every device and screen size</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Data visualization">
+                                <div class="slide-content">
+                                    <h3>Data Insights</h3>
+                                    <p>Transforming complex data into meaningful insights</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="previousSlide()">❮</button>
+                        <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" onclick="goToSlide(0)"></span>
+                            <span class="indicator" onclick="goToSlide(1)"></span>
+                            <span class="indicator" onclick="goToSlide(2)"></span>
+                            <span class="indicator" onclick="goToSlide(3)"></span>
+                            <span class="indicator" onclick="goToSlide(4)"></span>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="btn btn-outline" id="autoplay-btn" onclick="toggleAutoplay()">⏸️ Pause</button>
+                        <span class="carousel-counter">1 / 5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Data Section -->
+        <section id="api" class="section">
+            <div class="container">
+                <h2 class="section-title">Live API Data</h2>
+                <div class="api-grid">
+                    <!-- Inspirational Quotes -->
+                    <div class="api-card">
+                        <h3 class="api-title">Daily Inspiration</h3>
+                        <div id="quote-container" class="quote-container">
+                            <div class="loading">Loading quote...</div>
+                        </div>
+                        <button class="btn btn-outline" onclick="fetchNewQuote()">New Quote</button>
+                    </div>
+                    
+                    <!-- Weather Info -->
+                    <div class="api-card">
+                        <h3 class="api-title">Weather Information</h3>
+                        <div id="weather-container" class="weather-container">
+                            <button class="btn btn-primary" onclick="getLocationWeather()">Get Local Weather</button>
+                            <div class="weather-search">
+                                <input type="text" id="city-input" placeholder="Enter city name">
+                                <button class="btn btn-secondary" onclick="searchWeather()">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Random Facts -->
+                    <div class="api-card">
+                        <h3 class="api-title">Fun Facts</h3>
+                        <div id="fact-container" class="fact-container">
+                            <div class="loading">Loading fact...</div>
+                        </div>
+                        <button class="btn btn-outline" onclick="fetchRandomFact()">New Fact</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 InteractiveHub. Built with HTML, CSS & JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/carosel.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
